@@ -1,16 +1,17 @@
 import React from "react";
 import styled from "styled-components";
+import { observer } from "mobx-react";
 
-const BasketItem = ({ name, price, count }) => {
+const BasketItem = observer(({ name, price, count, onTake }) => {
     return (
-        <Wrap>
+        <Wrap onClick={() => onTake(name)}>
             <div className="name">{name}</div>
             <div className="price">{price}원</div>
             <div className="count">{count}</div>
-            <div className="delete">삭제하기</div>
+            <div className="return">갖다놓기</div>
         </Wrap>
     );
-};
+});
 
 const Wrap = styled.div`
     display: flex;
@@ -28,7 +29,7 @@ const Wrap = styled.div`
         flex: 1;
     }
 
-    .delete {
+    .return {
         margin-left: auto;
         color: #f06595;
         cursor: pointer;

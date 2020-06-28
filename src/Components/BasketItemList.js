@@ -9,7 +9,7 @@ const BasketItemList = ({ items, total, onTake }) => {
             price={item.price}
             count={item.count}
             key={item.name}
-            onTake={item.onTake}
+            onTake={onTake}
         ></BasketItem>
     ));
     return (
