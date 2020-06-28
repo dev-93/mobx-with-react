@@ -1,12 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "mobx-react";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+import CounterStore from "./stores/CounterStore";
+
+const counter = new CounterStore();
 
 ReactDOM.render(
-    <React.StrictMode>
+    <Provider counter={counter}>
         <App />
-    </React.StrictMode>,
+    </Provider>,
     document.getElementById("root")
 );
 
