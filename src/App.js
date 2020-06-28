@@ -9,7 +9,7 @@ function App() {
             <Counter />
             <hr />
             <SuperMarket />
-            {process.env.NODE_ENV === "development" && <DevTools />}
+            {process.env.NODE_ENV === "production" && <DevTools />}
         </div>
     );
 }

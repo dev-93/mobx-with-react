@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-const ShopItem = ({ name, price }) => {
+const ShopItem = ({ name, price, onPut }) => {
     return (
-        <Wrap>
+        <Wrap onClick={() => onPut(name, price)}>
             <h4>{name}</h4>
             <div>{price}원</div>
         </Wrap>
