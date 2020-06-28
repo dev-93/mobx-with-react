@@ -6,8 +6,6 @@ import DevTools from "mobx-react-devtools";
 function App() {
     return (
         <div className="App">
-            <Counter />
-            <hr />
             <SuperMarket />
             {process.env.NODE_ENV === "production" && <DevTools />}
         </div>
